@@ -1,10 +1,13 @@
-const Cat = require('./dist').default;
+const area = require('./dist').area;
+const circleVol = require('./dist').circleVol;
+const rectVol = require('./dist').rectVol;
 
-const cat = new Cat('Kidlat');
+console.log(require('./dist'));
 
-cat.talk();
-cat.meow();
-cat.walk();
-cat.sleep(3);
-cat.feed('fish');
-cat.feed('dog food');
+try {
+  console.log(area(10, 10));
+  console.log(circleVol(19, 25))
+  console.log(rectVol(1, 1, 1, 1))
+} catch (e) {
+  console.log(e.message)
+}
