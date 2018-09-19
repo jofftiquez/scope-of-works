@@ -1,1 +1,6 @@
-export const area = (length, width) => length * width; 
+export const area = (length, width) => {
+  if(typeof length !== 'number' || typeof width !== 'number') {
+    return null;
+  }
+  return length * width
+}; 
