@@ -8,6 +8,7 @@ try {
   console.log(area(10, 10));
   console.log(circleVol(19, 25))
   console.log(rectVol(1, 1, 1, 1))
+  console.log(rectVol(2, 2, 2, 2))
 } catch (e) {
   console.log(e.message)
 }
