@@ -1,7 +1,7 @@
 /**
  * Calculate the Area of a Rectangle
- * @param {Number} length Distance for Side A
- * @param {Number} width  Distance for Side B
+ * @param {Number} length Distance for side A
+ * @param {Number} width  Distance for side B
  */
 
 export const areaRectangle = (length, width) => {
