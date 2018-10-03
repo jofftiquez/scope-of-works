@@ -1,6 +1,6 @@
-import { areaSquare } from './rectangle';
+import { areaSquare } from './square';
 
-describe('area - Square', () => {
+describe('area - square', () => {
 
   test('1 * 1 should return 1', () => {
     const x = areaSquare(1);
