@@ -1,9 +1,14 @@
-export const circleVol = (diameter, length) => {
+/**
+ * Calculate the volume of a disk
+ * @param {Number} diameter Diameter of the disk
+ * @param {Number} height Height of the disk
+ */
 
-  if(typeof diameter !== 'number' || typeof length !== 'number') {
+export const circleVol = (diameter, height) => {
+
+  if(typeof diameter !== 'number' || typeof height !== 'number') {
     return null;
   }
 
-  return 3.14 * (Math.pow(diameter, 2)) * 0.25 * length;
-  
+  return Math.PI * (Math.pow(diameter, 2)) * 0.25 * height;
 }
