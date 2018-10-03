@@ -5,7 +5,7 @@
  * @param {Number} thickness 
  * @param {Number} footing 
  */
-export const rectVol = (lengthX, lengthY, thickness, footing) => {
+export const blockVol = (lengthX, lengthY, thickness, footing) => {
 
   if(typeof lengthX !== 'number' ||
      typeof lengthY !== 'number' || 
