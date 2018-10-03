@@ -1,6 +1,6 @@
 import { areaTrapezoid } from './trapezoid';
 
-describe('area', () => {
+describe('area - Trapezoid', () => {
   test('1, 2, 3 should return 4.5', () => {
     const x = areaTrapezoid(1, 2, 3);
     expect(x).toBe(4.5);

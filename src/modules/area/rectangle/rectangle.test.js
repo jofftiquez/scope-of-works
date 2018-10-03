@@ -1,6 +1,6 @@
 import { areaRectangle } from './rectangle';
 
-describe('area', () => {
+describe('area - Rectangle', () => {
   test('2 * 2 should return 4', () => {
     const x = areaRectangle(2, 2);
     expect(x).toBe(4);
