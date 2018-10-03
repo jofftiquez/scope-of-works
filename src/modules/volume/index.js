@@ -1,2 +1,2 @@
-export * from './circle';
+export * from './disk';
 export * from './block';
