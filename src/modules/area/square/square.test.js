@@ -1,8 +1,8 @@
 import { areaSquare } from './square';
 
-// test format is:
-// description followed by a function/callback containing a value equal to a function multiplying two numbers.
-// it ends with the expected return of the multiplication
+/* test format is:
+ description followed by a function/callback containing a value equal to a function multiplying two numbers.
+ it ends with the expected return of the multiplication */
 describe('area', () => {
   // checks if 2 multiplied with 2 returns 4
   test('2 * 2 should return 4', () => {
