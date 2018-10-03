@@ -46,7 +46,7 @@ const height = 25;
 const diskVolume = diskVol(diameter, height);
 console.log(diskVolume); // 7084.625
  
-// volume of a cuboid or block
+//Volume of a cuboid or block
 const cuboidWidth = 2;
 const cuboidDepth = 4;
 const cuboidHeight = 6;
