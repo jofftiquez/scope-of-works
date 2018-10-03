@@ -1,6 +1,6 @@
 /**
- * Calculate the Area of a Rectangle
- * @param {Number} length Length of a cube
+ * Calculate the Area of a Square
+ * @param {Number} length Length of a square
  */
 
 export const areaSquare = (length) => {
