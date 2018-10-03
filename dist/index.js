@@ -71,9 +71,10 @@ module.exports =
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules__ = __webpack_require__(1);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "area", function() { return __WEBPACK_IMPORTED_MODULE_0__modules__["a"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "circleVol", function() { return __WEBPACK_IMPORTED_MODULE_0__modules__["b"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "rectVol", function() { return __WEBPACK_IMPORTED_MODULE_0__modules__["c"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "areaRectangle", function() { return __WEBPACK_IMPORTED_MODULE_0__modules__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "areaTrapezoid", function() { return __WEBPACK_IMPORTED_MODULE_0__modules__["b"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "diskVol", function() { return __WEBPACK_IMPORTED_MODULE_0__modules__["d"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "blockVol", function() { return __WEBPACK_IMPORTED_MODULE_0__modules__["c"]; });
 
 
 /***/ }),
@@ -83,9 +84,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__area__ = __webpack_require__(2);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__area__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__volume__ = __webpack_require__(4);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__volume__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__volume__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__area__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__volume__ = __webpack_require__(7);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__volume__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__volume__["b"]; });
 
 
 
@@ -97,8 +99,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__area__ = __webpack_require__(3);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__area__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rectangle__ = __webpack_require__(3);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__rectangle__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__trapezoid__ = __webpack_require__(5);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__trapezoid__["a"]; });
+
 
 
 /***/ }),
@@ -106,78 +111,145 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const area = (length, width) => length * width;
-/* harmony export (immutable) */ __webpack_exports__["a"] = area;
- 
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rectangle__ = __webpack_require__(4);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__rectangle__["a"]; });
+
 
 /***/ }),
 /* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__volume__ = __webpack_require__(5);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__volume__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__volume__["b"]; });
-
+/**
+ * Calculate the Area of a Rectangle
+ * @param {Number} length Distance for side A
+ * @param {Number} width  Distance for side B
+ * @return Area of rectangle
+ */
+const areaRectangle = (length, width) => {
+  if(typeof length !== 'number' || typeof width !== 'number') {
+    return null;
+  }
+  return length * width
+};
+/* harmony export (immutable) */ __webpack_exports__["a"] = areaRectangle;
+ 
 
 /***/ }),
 /* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const circleVol = (diameter, length) => {
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__trapezoid__ = __webpack_require__(6);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__trapezoid__["a"]; });
 
-  let who = 'Circle Volume';
 
-  if(typeof diameter !== 'number') {
-    throw {
-      message: `${who} Error - diameter must be a number, got ${typeof diameter}.`
-    }
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * Calculate the Area of a Trapezoid.
+ * ```
+ * a  +--+     +
+ *   +    +    | h
+ *  +      +   |
+ * +--------+  +
+ * b
+ * ```
+
+ * @param {Number} a See ASCII art above.
+ * @param {Number} b See ASCII art above.
+ * @param {Number} h See ASCII art above.
+ */
+const areaTrapezoid = (a, b, h) => {
+  if(typeof a !== 'number' || typeof b !== 'number' || typeof h !== 'number') {
+    return null;
+  }
+  return ((a + b) / 2) * h;
+};
+/* harmony export (immutable) */ __webpack_exports__["a"] = areaTrapezoid;
+ 
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__disk__ = __webpack_require__(8);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__disk__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__block__ = __webpack_require__(10);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__block__["a"]; });
+
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__disk__ = __webpack_require__(9);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__disk__["a"]; });
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * Calculate the volume of a disk
+ * @param {Number} diameter Diameter of the disk
+ * @param {Number} height Height of the disk
+ */
+
+const diskVol = (diameter, height) => {
+
+  if(typeof diameter !== 'number' || typeof height !== 'number') {
+    return null;
   }
 
-  if(typeof length !== 'number') {
-    throw {
-      message: `${who} Error - length must be a number, got ${typeof length}.`
-    }
-  }
-    
-  return 3.14 * (Math.pow(diameter, 2)) * 0.25 * length;
+  return 3.14 * (Math.pow(diameter, 2)) * 0.25 * height;
 }
-/* harmony export (immutable) */ __webpack_exports__["a"] = circleVol;
+/* harmony export (immutable) */ __webpack_exports__["a"] = diskVol;
 
 
-const rectVol = (lengthX, lengthY, thickness, footing) => {
-  
-  let who = 'Rectangle Volume';
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-  if(typeof lengthX !== 'number') {
-    throw {
-      message: `${who} Error - lengthX must be a number, got ${typeof lengthX}.`
-    }
-  }
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__block__ = __webpack_require__(11);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__block__["a"]; });
 
-  if(typeof lengthY !== 'number') {
-    throw {
-      message: `${who} Error - lengthY must be a number, got ${typeof lengthY}.`
-    }
-  }
 
-  if(typeof thickness !== 'number') {
-    throw {
-      message: `${who} Error - thickness must be a number, got ${typeof thickness}.`
-    }
-  }
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-  if(typeof footing !== 'number') {
-    throw {
-      message: `${who} Error - footing must be a number, got ${typeof footing}.`
-    }
+"use strict";
+/**
+ * Calculate the volume of a rectangular box.
+ * @param {Number} lengthX 
+ * @param {Number} lengthY 
+ * @param {Number} thickness 
+ * @param {Number} footing 
+ */
+const blockVol = (lengthX, lengthY, thickness, footing) => {
+
+  if(typeof lengthX !== 'number' ||
+     typeof lengthY !== 'number' || 
+     typeof thickness !== 'number' ||
+     typeof footing !== 'number'
+    ) {
+    return null;
   }
 
   return lengthX * lengthX * thickness * footing;
-
+  
 }
-/* harmony export (immutable) */ __webpack_exports__["b"] = rectVol;
+/* harmony export (immutable) */ __webpack_exports__["a"] = blockVol;
 
 
 /***/ })
