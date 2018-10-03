@@ -1,12 +1,11 @@
 /**
- * Calculate the Area of a Square
- * @param {Number} length Distance for Side A
- * @param {Number} width  Distance for Side B
+ * Calculate the Area of a Rectangle
+ * @param {Number} length Length of a cube
  */
 
-export const areaSquare = (length, width) => {
-  if(typeof length !== 'number' || typeof width !== 'number') {
+export const areaSquare = (length) => {
+  if(typeof length !== 'number') {
     return null;
   }
-  return length * width
+  return Math.pow(length, 2);
 }; 

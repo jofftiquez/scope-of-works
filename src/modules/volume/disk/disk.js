@@ -4,7 +4,7 @@
  * @param {Number} height Height of the disk
  */
 
-export const circleVol = (diameter, height) => {
+export const diskVol = (diameter, height) => {
 
   if(typeof diameter !== 'number' || typeof height !== 'number') {
     return null;

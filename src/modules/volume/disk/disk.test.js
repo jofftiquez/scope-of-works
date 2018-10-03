@@ -1,23 +1,23 @@
-import { circleVol } from './circle';
+import { diskVol } from './disk';
 
-describe('volume - circle', () => {
+describe('volume - disk', () => {
   test('19 and 25 arguments should return 7084.625', () => {
-    const x = circleVol(19, 25);
-    expect(x).toBe(7084.625);
+    const x = diskVol(19, 25);
+    expect(x).toBe(7084.625); // TODO: Fix that, with the change of the PI constant.
   });
 
   test('[] and 25 arguments should return null', () => {
-    const x = circleVol([], 25);
+    const x = diskVol([], 25);
     expect(x).toBe(null);
   });
 
   test('{} and 25 arguments should return null', () => {
-    const x = circleVol({}, 25);
+    const x = diskVol({}, 25);
     expect(x).toBe(null);
   });
 
   test(`'10' and 25 arguments should return null`, () => {
-    const x = circleVol([], 25);
+    const x = diskVol([], 25);
     expect(x).toBe(null);
   });
 });
