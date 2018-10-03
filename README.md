@@ -16,14 +16,42 @@
 
 ```javascript
 // ES 5
-const area = require('scope-of-works').area;
+const area = require('scope-of-works').areaRectangle;
 
 // or ES 6 - Treeshaking ready.
-import { area } from 'scope-of-works';
+import { areaRectangle } from 'scope-of-works';
 
-const length = 20;
-const width = 40;
-const floorArea = area(length, width);
 
+const areaRectangle = require('scope-of-works').areaRectangle;
+const areaTrapezoid = require('scope-of-works').areaTrapezoid;
+const diskVol = require('scope-of-works').diskVol;
+const blockVol = require('scope-of-works').blockVol;
+
+// Area of a rectangle
+const floorLength = 20;
+const floorWidth = 40;
+const floorArea = areaRectangle(floorLength, floorWidth);
 console.log(floorArea); // 800
+
+//Area of a Trapezoid
+const a = 20;
+const b = 30;
+const h = 40
+const trapezoidArea = areaTrapezoid(a, b, h);
+console.log(trapezoidArea); // 1000
+
+//Volume of a disk 
+const diameter = 19;
+const height = 25;
+const diskVolume = diskVol(diameter, height);
+console.log(diskVolume); // 7084.625
+ 
+// volume of a cuboid or block
+const cuboidWidth = 2;
+const cuboidDepth = 4;
+const cuboidHeight = 6;
+const cuboidFooting = 2;
+const blockVolume = blockVol(cuboidWidth, cuboidHeight, cuboidDepth, cuboidFooting)
+console.log(blockVolume); // 32
+
 ```
