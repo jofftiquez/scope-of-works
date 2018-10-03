@@ -15,19 +15,10 @@
 **ES5**
 
 ```javascript
+// ES 5
 const area = require('scope-of-works').area;
 
-const length = 20;
-const width = 40;
-const floorArea = area(length, width);
-
-console.log(floorArea); // 800
-```
-
-**ES6**
-> Treeshaking ready.
-
-```javascript
+// or ES 6 - Treeshaking ready.
 import { area } from 'scope-of-works';
 
 const length = 20;
