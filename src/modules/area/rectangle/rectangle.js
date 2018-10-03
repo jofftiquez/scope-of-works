@@ -1,10 +1,10 @@
 /**
- * Calculate the Area of a Square
+ * Calculate the Area of a Rectangle
  * @param {Number} length Distance for Side A
  * @param {Number} width  Distance for Side B
  */
 
-export const areaSquare = (length, width) => {
+export const areaRectangle = (length, width) => {
   if(typeof length !== 'number' || typeof width !== 'number') {
     return null;
   }
