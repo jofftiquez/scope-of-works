@@ -1,9 +1,9 @@
 # scope-of-works
 
 > Math library for construction scope of works.
-
+##my changes
 ## Install
-
+# hello
 **npm**
 > `npm install scope-of-works`
 
@@ -23,7 +23,7 @@ const floorArea = area(length, width);
 
 console.log(floorArea); // 800
 ```
-
+#my changes
 **ES6**
 > Treeshaking ready.
 
