@@ -10,5 +10,5 @@ export const diskVol = (diameter, height) => {
     return null;
   }
 
-  return Math.PI * (Math.pow(diameter, 2)) * 0.25 * height;
+  return 3.14 * (Math.pow(diameter, 2)) * 0.25 * height;
 }
