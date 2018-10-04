@@ -8,5 +8,10 @@ export const areaRectangle = (length, width) => {
   if(typeof length !== 'number' || typeof width !== 'number') {
     return null;
   }
+
+  if(length <= 0 || typeof width <=0 ) {
+    return null;
+  }
+  
   return length * width
 }; 

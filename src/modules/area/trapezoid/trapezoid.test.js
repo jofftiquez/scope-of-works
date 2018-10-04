@@ -11,7 +11,6 @@ describe('area - Trapezoid', () => {
     expect(x).toBe(75);
   });
 
-
   test('[], 1, 2 should return null', () => {
     const x = areaTrapezoid([], 1, 2);
     expect(x).toBe(null);
@@ -26,4 +25,41 @@ describe('area - Trapezoid', () => {
     const x = areaTrapezoid('1', 2, 3);
     expect(x).toBe(null);
   });
+
+  test('0, 0, 0 should return null', () => {
+    const x = areaTrapezoid(0, 0, 0);
+    expect(x).toBe(null);
+  });
+
+  test('1, 2, 0 should return null', () => {
+    const x = areaTrapezoid(1, 2, 0);
+    expect(x).toBe(null);
+  });
+
+  test('1, 0, 2 should return null', () => {
+    const x = areaTrapezoid(1, 0, 2);
+    expect(x).toBe(null);
+  });
+
+  test('0, 1, 2 should return null', () => {
+    const x = areaTrapezoid(0, 1, 2);
+    expect(x).toBe(null);
+  });
+
+  test('-1, 1, 2 should return null', () => {
+    const x = areaTrapezoid(-1, 1, 2);
+    expect(x).toBe(null);
+  });
+
+  test('1, -1, 2 should return null', () => {
+    const x = areaTrapezoid(1, -1, 2);
+    expect(x).toBe(null);
+  });
+
+  test('1, 2, -1 should return null', () => {
+    const x = areaTrapezoid(1, 2, -1);
+    expect(x).toBe(null);
+  });
+
+
 });
