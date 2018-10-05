@@ -14,6 +14,13 @@ export const blockVol = (lengthX, lengthY, thickness, footing) => {
     ) {
     return null;
   }
+  if( lengthX <= 0 ||
+      lengthY <= 0 || 
+      thickness <= 0 ||
+      footing <= 0
+    ) {
+    return null; 
+  }
 
   return lengthX * lengthX * thickness * footing;
   
